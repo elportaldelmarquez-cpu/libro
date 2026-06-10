@@ -1,0 +1,2848 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)file:///C:/Users/51901/Downloads/MATU_Menu_Completo_2026%20(20).html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menú Mat'u Restobar 2026 - Guía Completa</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    min-height: 100vh;
+  }
+  .container { max-width: 1400px; margin: 0 auto; }
+  header {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  h1 {
+    color: #667eea;
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .subtitle { color: #764ba2; font-size: 1.3em; margin-bottom: 30px; }
+  .nav-tabs {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    justify-content: center; margin-bottom: 30px;
+  }
+  .nav-tab {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white; border: none; padding: 10px 20px;
+    border-radius: 25px; cursor: pointer; font-size: 0.9em;
+    font-weight: bold; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .nav-tab:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+  .category {
+    background: white; padding: 40px; border-radius: 20px;
+    margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  .category-title {
+    color: #667eea; font-size: 2.2em; margin-bottom: 30px;
+    padding-bottom: 15px; border-bottom: 4px solid #f5576c;
+    text-transform: uppercase;
+  }
+  .dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 30px;
+  }
+  .dish-card {
+    background: #f8f9fa; border-radius: 15px; overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;
+  }
+  .dish-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+  .dish-image {
+    width: 100%; height: 220px; object-fit: cover; display: block; cursor: pointer;
+  }
+  .dish-image:hover { opacity: 0.85; }
+  .dish-image-placeholder {
+    width: 100%; height: 220px; background: linear-gradient(135deg, #e8e8f0 0%, #d5d5e8 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: #999; font-size: 0.9em; gap: 6px; cursor: pointer;
+    border-bottom: 2px dashed #bbb; transition: background 0.2s;
+  }
+  .dish-image-placeholder:hover { background: linear-gradient(135deg, #dcdcf0 0%, #c8c8e4 100%); color: #777; }
+  .dish-image-placeholder .ph-icon { font-size: 2.2em; }
+  .dish-image-placeholder .ph-text { font-weight: 600; font-size: 0.95em; }
+  .dish-image-placeholder .ph-sub { font-size: 0.8em; color: #bbb; }
+  .dish-image-wrapper { position: relative; }
+  /* Modal imagen */
+  .img-modal-overlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.65);
+    z-index: 9999; align-items: center; justify-content: center;
+  }
+  .img-modal-overlay.active { display: flex; }
+  .img-modal {
+    background: white; border-radius: 18px; padding: 30px; width: 400px; max-width: 95vw;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4); position: relative;
+  }
+  .img-modal h3 { color: #667eea; font-size: 1.2em; margin-bottom: 20px; text-align: center; }
+  .img-modal-close {
+    position: absolute; top: 14px; right: 18px; font-size: 1.4em; cursor: pointer;
+    color: #999; background: none; border: none; line-height: 1;
+  }
+  .img-modal-close:hover { color: #333; }
+  .img-modal-tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+  .img-modal-tab {
+    flex: 1; padding: 9px; border-radius: 10px; border: 2px solid #e0e0e0;
+    background: #f8f9fa; cursor: pointer; font-weight: 600; font-size: 0.9em;
+    color: #888; transition: all 0.2s;
+  }
+  .img-modal-tab.active { border-color: #667eea; background: #667eea; color: white; }
+  .img-modal-panel { display: none; }
+  .img-modal-panel.active { display: block; }
+  .img-modal-label { font-size: 0.85em; color: #666; margin-bottom: 6px; font-weight: 600; }
+  .img-modal-file-btn {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; padding: 14px; border-radius: 12px; border: 2px dashed #bbb;
+    background: #f8f9fa; cursor: pointer; font-size: 0.95em; color: #777;
+    transition: all 0.2s;
+  }
+  .img-modal-file-btn:hover { border-color: #667eea; color: #667eea; background: #f0f1ff; }
+  .img-modal-file-input { display: none; }
+  .img-modal-url-row { display: flex; gap: 8px; }
+  .img-modal-url-input {
+    flex: 1; padding: 10px 14px; border-radius: 10px; border: 2px solid #e0e0e0;
+    font-size: 0.9em; outline: none; transition: border 0.2s;
+  }
+  .img-modal-url-input:focus { border-color: #667eea; }
+  .img-modal-url-btn {
+    padding: 10px 16px; border-radius: 10px; border: none;
+    background: linear-gradient(135deg, #667eea, #764ba2); color: white;
+    font-weight: 700; cursor: pointer; font-size: 0.9em; white-space: nowrap;
+  }
+  .img-modal-url-btn:hover { opacity: 0.88; }
+  .img-modal-preview {
+    margin-top: 14px; border-radius: 10px; overflow: hidden; display: none;
+    border: 2px solid #e0e0e0;
+  }
+  .img-modal-preview img { width: 100%; height: 140px; object-fit: cover; display: block; }
+  .img-modal-preview-error { color: #f5576c; font-size: 0.85em; margin-top: 8px; display: none; }
+  .img-modal-confirm {
+    width: 100%; margin-top: 18px; padding: 12px; border-radius: 12px; border: none;
+    background: linear-gradient(135deg, #667eea, #764ba2); color: white;
+    font-weight: 700; font-size: 1em; cursor: pointer; display: none;
+  }
+  .img-modal-confirm:hover { opacity: 0.88; }
+  .dish-content { padding: 25px; }
+  .dish-header {
+    display: flex; justify-content: space-between;
+    align-items: flex-start; margin-bottom: 18px;
+    flex-wrap: wrap; gap: 10px;
+  }
+  .dish-name { color: #333; font-size: 1.4em; font-weight: bold; flex: 1; line-height: 1.3; }
+  .price-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white; padding: 10px 18px; border-radius: 10px;
+    font-size: 1.3em; font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2); white-space: nowrap;
+  }
+  .section { margin-bottom: 14px; }
+  .section-title {
+    color: #f5576c; font-weight: bold; font-size: 1em;
+    margin-bottom: 6px; display: flex; align-items: center; gap: 6px;
+  }
+  .section-content { color: #555; line-height: 1.6; padding-left: 24px; font-size: 0.95em; }
+  .allergen-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; padding-left: 24px; }
+  .allergen-badge {
+    background: #ff6b6b; color: white; padding: 4px 10px;
+    border-radius: 20px; font-size: 0.82em; font-weight: bold;
+  }
+  .allergen-badge.safe { background: #51cf66; }
+  .pairing-box {
+    background: linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%);
+    padding: 12px 15px; border-radius: 10px; margin-top: 14px;
+  }
+  .pairing-title { color: #2d6a4f; font-weight: bold; margin-bottom: 6px; font-size: 0.95em; }
+  .pairing-box div:last-child { color: #333; font-size: 0.9em; line-height: 1.5; }
+  footer {
+    background: white; padding: 30px; border-radius: 20px;
+    text-align: center; margin-top: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  .allergen-summary {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px; text-align: left; margin-top: 20px;
+  }
+  .allergen-summary-item { background: #f8f9fa; padding: 12px 15px; border-radius: 10px; font-size: 0.9em; }
+  @media (max-width: 768px) {
+    .dishes-grid { grid-template-columns: 1fr; }
+    h1 { font-size: 2em; }
+    .category-title { font-size: 1.6em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>🍽️ MENÚ MAT'U RESTOBAR</h1>
+  <p class="subtitle">Guía Completa 2026 · Platos, Ingredientes, Alérgenos y Maridajes · Portal del Marqués Hotel</p>
+  <p style="color:#999;font-size:0.85em;margin-top:8px;">Todos los precios expresados en soles e incluyen impuestos de ley · Si tienes alguna alergia, alerta a tu mesero.</p>
+  <button onclick="saveHtmlWithImages()" style="margin-top:14px;padding:10px 24px;border-radius:25px;border:none;background:linear-gradient(135deg,#f5576c,#f093fb);color:white;font-weight:700;font-size:0.95em;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,0.2);">💾 Guardar HTML con imágenes</button>
+  <div class="nav-tabs" style="margin-top:20px;">
+    <button class="nav-tab" onclick="document.getElementById(&#39;piqueos&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">🫕 Piqueos</button>
+    <button class="nav-tab" onclick="document.getElementById(&#39;sangu&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">🥪 Sánguches</button>
+    <button class="nav-tab" onclick="document.getElementById(&#39;poke&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">🥗 Poke &amp; Ensaladas</button>
+    <button class="nav-tab" onclick="document.getElementById(&#39;sopas&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">🍲 Sopas</button>
+    <button class="nav-tab" onclick="document.getElementById(&#39;chef&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">👨‍🍳 Recomendaciones Chef</button>
+    <button class="nav-tab" onclick="document.getElementById(&#39;tipicos&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">🏔️ Típicos Cajamarquinos</button>
+    <button class="nav-tab" onclick="document.getElementById(&#39;clasicos&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">⭐ Clásicos Mat'u</button>
+    <button class="nav-tab" onclick="document.getElementById(&#39;veggie&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">🌿 Vegetarianas</button>
+    <button class="nav-tab" onclick="document.getElementById(&#39;kids&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">👦 Menú Kids</button>
+    <button class="nav-tab" onclick="document.getElementById(&#39;postres&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">🍮 Postres</button>
+    <button class="nav-tab" onclick="document.getElementById(&#39;cocteles&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">🍹 Cócteles</button>
+    <button class="nav-tab" onclick="document.getElementById(&#39;bebidas&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">🥤 Bebidas</button>
+  </div>
+</header>
+
+<!-- ===== PIQUEOS ===== -->
+<div class="category" id="piqueos">
+  <h2 class="category-title">🫕 PIQUEOS</h2>
+  <div class="dishes-grid">
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <img src="./Menú Mat&#39;u Restobar 2026 - Guía Completa_files/Tequeños-with-chicken-and-oriental-sauce.-jpg-1.jpg" class="dish-image" title="Clic para cambiar imagen" data-url="https://perudelights.com/wp-content/uploads/2014/07/Teque%C3%B1os-with-chicken-and-oriental-sauce.-jpg-1.jpg"><div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))" style="display: none;">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Tequeños de Asado</h3>
+          <div class="price-box">S/ 36</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">8 tequeños de masa primavera crujiente, rellenos con trozos de asado de res bañados en su propio jugo de cocción. Acompañados con salsa palteada y salsa de lomo. Un bocado contundente que fusiona lo crocante de la masa con la profundidad del asado.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Masa primavera (wantán), asado de res, jugo de cocción de res, palta, mayonesa, limón, ajo, especias.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Pisco Sour, Chilcano clásico o cerveza rubia fría. La grasa del asado se equilibra perfectamente con la acidez del limón y la burbuja de la cerveza.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Alitas en Salsa Pancamiel</h3>
+          <div class="price-box">S/ 36</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">8 alitas de pollo bañadas en una salsa cítrica a base de ají panca y miel, al estilo MAT'U. Un equilibrio dulce-picante irresistible. Acompañadas de papas fritas crujientes.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Alitas de pollo, ají panca, miel de abeja, limón, ajo, sillao, especias, papas fritas.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🫘 Soya</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Cerveza Stella Artois o Corona bien fría, Maracuyá Sour o Mojito. El dulzor de la miel y el toque picante del ají panca piden una bebida refrescante y ligeramente amarga.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Tacos de Pollo</h3>
+          <div class="price-box">S/ 32</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">3 taquitos crujientes acompañados de pollo al grill jugoso, chalaquita fresca de cebolla, tomate y ají, y salsa guacamole cremosa. Frescura y textura en cada bocado.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Tortilla de maíz o trigo, pechuga de pollo, cebolla, tomate, ají amarillo, cilantro, palta, limón, sal.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Aguaymanto Sour, limonada de hierba buena o Chilcano de maracuyá. La frescura del guacamole y la chalaquita armonizan con bebidas cítricas y herbales.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Pizzeta MAT'U</h3>
+          <div class="price-box">S/ 35</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Pizzeta de 4 trozos al estilo MAT'U con salsa de tomate artesanal, jamón, queso cajamarquino local, tocino, albahaca fresca, tomates confitados y champiñones. Un homenaje gourmet a lo local.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Masa de pizza, salsa de tomate, jamón, queso cajamarquino, tocino, albahaca, tomates confitados, champiñones.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino tinto Navarro Correas (copa) o Aperol Spritz. La intensidad del queso cajamarquino y el tocino ahumado piden un vino con cuerpo o un aperitivo refrescante.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Pizzeta Hawaiana</h3>
+          <div class="price-box">S/ 35</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Pizzeta de 4 trozos con salsa de tomate, jamón, queso cajamarquino y piña deshidratada. El contraste dulce-salado que muchos aman, con el toque especial del queso local de Cajamarca.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Masa de pizza, salsa de tomate, jamón, queso cajamarquino, piña deshidratada.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Daiquiri de Piña en Tiki o jugo natural de piña. El dulzor tropical de la piña deshidratada pide una bebida frutal y refrescante que amplíe esa nota.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== SÁNGUCHES Y HAMBURGUESA ===== -->
+<div class="category" id="sangu">
+  <h2 class="category-title">🥪 SÁNGUCHES Y HAMBURGUESA</h2>
+  <div class="dishes-grid">
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Pollo Palteado</h3>
+          <div class="price-box">S/ 27</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Pollo deshilachado jugoso en pan brioche esponjoso, con palta cremosa, papas al hilo crocantes, apio y mayonesa. Acompañado de chips de papas nativas. Fresco, suave y con contrastes de textura irresistibles.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Pechuga de pollo deshilachada, pan brioche, palta, papas al hilo, apio, mayonesa, chips de papas nativas.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Limonada clásica o de hierba buena, Chicha morada o cerveza rubia. La cremosidad de la palta armoniza con bebidas frescas y ligeramente ácidas.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Sándwich Chicharrón de Cerdo c/ Sarsa Criolla</h3>
+          <div class="price-box">S/ 25</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Crujiente chicharrón de cerdo en pan francés con camote frito dulce y sarsa criolla de cebolla, tomate y ají. Acompañado de chips de camote. Un clásico peruano elevado a su máxima expresión.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Chicharrón de cerdo, pan francés, camote, cebolla, tomate, ají amarillo, cilantro, limón.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Chicha morada, Inca Kola o Pisco Sour. La grasa del chicharrón se corta con la acidez del limón de la sarsa y las bebidas dulces tradicionales.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Tostadas Palteadas c/ Huevo</h3>
+          <div class="price-box">S/ 20</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">2 huevos a elección (al inglés o fritos) sobre tostadas de pan multigrano, con trozos de palta y tomate fresco. Una opción saludable, nutritiva y deliciosa para cualquier hora del día.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Pan multigrano, huevos, palta, tomate, sal, pimienta.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Café americano, latte o jugo natural. Ideal como desayuno tardío o brunch. Las notas del café complementan la cremosidad de la palta.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Sándwich de Asado</h3>
+          <div class="price-box">S/ 25</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Trozos tiernos de asado de res en pan ciabatta artesanal, con cebolla blanca y mayonesa de la casa con mostaza. Acompañado de chips de papas nativas. Sabor profundo y reconfortante.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Asado de res, pan ciabatta, cebolla blanca, mayonesa, mostaza, chips de papas nativas.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Cerveza Cusqueña o Pilsen, vino tinto (copa Navarro Correas). La mostaza y la cebolla blanca potencian los jugos del asado; una cerveza limpia el paladar entre cada bocado.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Crispy Chicken Burger</h3>
+          <div class="price-box">S/ 32</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Pechuga de pollo apanada con panko japonés ultra crujiente, pan brioche suave, pepinos encurtidos ácidos y mayonesa de ají amarillo ahumada. Acompañada de papas fritas doradas. Textura premium en cada mordida.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Pechuga de pollo, panko, pan brioche, pepinos encurtidos, ají amarillo, mayonesa, huevo, papas fritas.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Maracuyá Sour, Aguaymanto Sour o Stella Artois. La mayonesa de ají amarillo ahumado pide una bebida con acidez frutal para equilibrar la untuosidad del apanado.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">MAT'U Burger</h3>
+          <div class="price-box">S/ 34</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Mix especial de carne de res y cerdo al estilo MAT'U en pan brioche, queso cheddar fundido, mermelada de cebolla caramelizada y tocino ahumado. Acompañada de papas fritas. La hamburguesa insignia del restaurante.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Carne de res y cerdo molidas, pan brioche, queso cheddar, cebolla caramelizada, tocino ahumado, papas fritas.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Cerveza Corona o Stella Artois, Moscow Mule o vino tinto Malbec. La mermelada de cebolla y el tocino ahumado piden contrastes: cerveza refrescante o vino con carácter frutal.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== POKE BOWLS Y ENSALADA ===== -->
+<div class="category" id="poke">
+  <h2 class="category-title">🥗 POKE BOWLS Y ENSALADA</h2>
+  <div class="dishes-grid">
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Ensalada Oriental</h3>
+          <div class="price-box">S/ 30</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Pollo crunchy apanado con panko sobre un mix de hojas verdes, choclo, pimiento, col morada, fideo fansí crujiente y naranja deshidratada. Aliñada con aderezo oriental. Fresca, colorida y con múltiples texturas.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Pollo apanado con panko, mix de hojas, choclo, pimiento rojo/amarillo, col morada, fideo de arroz (fansí), naranja deshidratada, aliño oriental (sillao, ajonjolí, jengibre, limón).</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🫘 Soya</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+            <span class="allergen-badge">🌰 Ajonjolí</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Té helado de maracuyá, Gin Tonic Tanqueray o Veraniego (coctel de autor). El aliño oriental a base de sillao y jengibre armoniza con bebidas de notas herbales y cítricas.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Poke Bowl c/ Pollo al Grill</h3>
+          <div class="price-box">S/ 35</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Tazón con base de arroz o quinua a elección, vegetales cocidos y frescos de temporada, láminas de pechuga de pollo a la plancha, palta cremosa y salsa acevichada. Nutritivo, balanceado y lleno de sabor peruano.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Arroz blanco o quinua andina, pechuga de pollo a la plancha, palta, vegetales mixtos (cocidos y frescos), limón, ají amarillo, cebolla morada, cilantro (salsa acevichada).</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge safe">✓ Sin alérgenos comunes</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Limonada de hierba luisa, Chicha morada o vino blanco Marqués de Riscal (copa). La salsa acevichada con sus notas cítricas y picantes pide bebidas frescas que no opaquen los vegetales.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Poke Bowl c/ Langostinos</h3>
+          <div class="price-box">S/ 36</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Tazón con base de arroz o quinua, vegetales cocidos y frescos, langostinos flameados al momento, palta y salsa acevichada. Los langostinos flameados aportan un aroma ahumado que transforma el plato.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Arroz o quinua, langostinos, palta, vegetales mixtos, limón, ají amarillo, cebolla morada, cilantro, ajo.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🦐 Mariscos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino blanco Marqués de Riscal (copa), Aguaymanto Sour o Chilcano de aguaymanto. La delicadeza del langostino flameado se realza con vinos blancos aromáticos o cocteles de frutas andinas.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== SOPAS ===== -->
+<div class="category" id="sopas">
+  <h2 class="category-title">🍲 SOPAS</h2>
+  <div class="dishes-grid">
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Chupe de Langostinos</h3>
+          <div class="price-box">S/ 34</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Clásico chupe peruano con langostinos frescos, trozos de papa amarilla andina, queso tipo suizo derretido, choclo serrano, arroz, habas, arvejas y huevo escalfado. Un plato contundente y reconfortante con sabores del mar y la sierra.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Langostinos, papa amarilla, queso suizo, choclo, arroz, habas, arvejas, huevo, leche, ajo, ají panca, cebolla, cilantro.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🦐 Mariscos</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Infusión de menta o hierba luisa (tetera), vino blanco con cuerpo o Chilcano clásico. El caldo cremoso con queso y langostinos armoniza con bebidas de notas herbales que limpian el paladar.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Dieta de Pollo</h3>
+          <div class="price-box">S/ 28</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Clásica sopa reconfortante con pechuga de pollo, vegetales frescos, trozos de papa y cabello de ángel. Ligera, nutritiva y perfecta para restaurar energías. El plato del bienestar.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Pechuga de pollo, papa blanca, zanahoria, apio, cebolla, fideos cabello de ángel, ajo, sal, pimienta, cilantro.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Infusión natural de manzanilla o cedrón (tetera), agua con gas o té helado clásico. Sopa de bajo perfil aromático que acompaña mejor con bebidas suaves que no compitan con el caldo.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Sopa a la Minuta</h3>
+          <div class="price-box">S/ 29</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Clásica sopa peruana de bistrot con carne molida sazonada, vegetales frescos, leche, cabello de ángel y huevo. Rápida, contundente y con ese sabor hogareño inconfundible de la cocina criolla.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Carne molida de res, vegetales (zanahoria, cebolla, tomate), leche, fideos cabello de ángel, huevo, ajo, comino, ají amarillo, sal.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Té helado de maracuyá, limonada clásica o Chicha morada. El sabor cremoso de la leche y el huevo en el caldo se complementa con bebidas de acidez suave y refrescante.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== RECOMENDACIONES DEL CHEF ===== -->
+<div class="category" id="chef">
+  <h2 class="category-title">👨‍🍳 RECOMENDACIONES DEL CHEF</h2>
+  <div class="dishes-grid">
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Arroz Meloso c/ Langostinos</h3>
+          <div class="price-box">S/ 40</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Arroz cremoso al estilo risotto peruano, acompañado de langostinos salteados al momento y salsa de chalaquita acevichada. Un plato que fusiona técnica italiana con sabores peruanos de mar y campo.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Arroz, langostinos, caldo de langostinos, cebolla, ajo, ají amarillo, limón, cebolla morada, tomate, cilantro, aceite de oliva.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🦐 Mariscos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino blanco Marqués de Riscal (copa o botella) o Pisco Sour. La cremosidad del arroz meloso con el frescor cítrico de la chalaquita piden un vino blanco elegante y mineral.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Pulpo al Olivo</h3>
+          <div class="price-box">S/ 37</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Láminas de pulpo cocido a la perfección sobre chalaquita fresca, cubos de palta cremosa y mayonesa de aceituna negra. Acompañado de trozos de pan ciabatta tostado para untar. Elegancia nikkei-criolla.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Pulpo, aceitunas negras, mayonesa, palta, cebolla morada, tomate, ají amarillo, cilantro, limón, pan ciabatta.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🦑 Cefalópodos</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+            <span class="allergen-badge">🌾 Gluten</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino blanco Marqués de Riscal, Lady Blue (coctel) o Aperol Spritz. La mayonesa de aceitunas tiene un perfil graso y salado que un vino blanco seco o un coctel cítrico equilibran magníficamente.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Lasagna de Carne</h3>
+          <div class="price-box">S/ 40</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Lasagna al estilo MAT'U con capas de carne sazonada, salsa de tomate artesanal y queso cajamarquino local gratinado. Acompañada de panes al ajo tostados. Comfort food de nivel superior con sello local.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Pasta para lasagna, carne molida de res, salsa de tomate, queso cajamarquino, cebolla, ajo, orégano, pan al ajo.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino tinto Navarro Correas o Faustino VII Tempranillo (copa o botella). Una lasagna con queso cajamarquino fundido es el maridaje perfecto para un vino tinto con carácter y cuerpo medio.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Ravioles de Carne en Salsa Norteña de Zapallo Loche</h3>
+          <div class="price-box">S/ 37</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Pasta rellena artesanal con carne de res molida de sabor norteño, bañada en cremosa salsa de zapallo loche peruano, queso parmesano rallado y pimiento morrón. Un plato que fusiona Italia con el norte peruano.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Pasta ravioles (harina, huevo), carne molida, zapallo loche, queso parmesano, pimiento morrón, ajo, cebolla, crema, especias norteñas.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino tinto Faustino VII Tempranillo o Navarro Correas. La dulzura del zapallo loche y la profundidad de la carne norteña piden un vino tinto de acidez media que no opaque la salsa.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Fettuccini en Salsa de Langostinos</h3>
+          <div class="price-box">S/ 40</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Fettuccini al dente bañado en una intensa salsa madre de langostinos reducida al estilo MAT'U, con langostinos enteros y pimiento morrón. Profundidad de sabor marina en cada forkful.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Fettuccini, langostinos, bisque/fondo de langostinos, pimiento morrón, ajo, cebolla, crema, aceite de oliva, perejil.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🦐 Mariscos</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino blanco Marqués de Riscal (botella) o Chilcano de aguaymanto. La intensidad yodada de la salsa madre de langostinos se equilibra magistralmente con un vino blanco elegante y mineral.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Ceviche de Pulpo</h3>
+          <div class="price-box">S/ 37</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Láminas de pulpo en clásico estilo ceviche peruano: cebolla morada, cubos de palta, camote glaseado dulce, choclo tierno y cancha chulpi crujiente. Un juego de temperaturas, texturas y sabores del mar.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Pulpo, limón, cebolla morada, ají amarillo, palta, camote, choclo, cancha chulpi, cilantro, sal, pimienta.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🦑 Cefalópodos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Pisco Sour o Maracuyá Sour: el maridaje clásico peruano. La acidez del leche de tigre con ají amarillo pide exactamente la acidez y el dulzor frutal de un buen sour o un vino blanco seco.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Pulpo Parrillero al Estilo MAT'U</h3>
+          <div class="price-box">S/ 39</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Pulpo ahumado a la parrilla, papa parmentier (cuadritos dorados), cubos de palta, chimichurri a nuestro estilo y salsa alioli de pimientos asados. El pulpo más sofisticado de Cajamarca.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Pulpo, papa, palta, ajo, perejil, orégano, limón, pimiento rojo/amarillo asado, aceite de oliva, mayonesa.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🦑 Cefalópodos</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino blanco Marqués de Riscal, Aperol Spritz o Negroni. El ahumado de la parrilla y el alioli de pimientos asados crean un perfil complejo que un vino blanco con cuerpo o un Negroni bitter-cítrico realzan.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Arroz Chaufa Colorado</h3>
+          <div class="price-box">S/ 40</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Arroz chaufa amazónico con cecina ahumada, panceta de cerdo crujiente, tortilla de huevo y plátano maduro en almíbar. Fusión chifa-amazónica única: el oriente peruano en un wok.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Arroz, cecina amazónica, panceta de cerdo, huevo, plátano maduro, sillao, cebolla china, ajo, jengibre, aceite de ajonjolí.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🥚 Huevo</span>
+            <span class="allergen-badge">🫘 Soya</span>
+            <span class="allergen-badge">🌰 Ajonjolí</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Cerveza rubia bien fría (Pilsen o Cusqueña), Mojito o Piña Colada. El ahumado de la cecina amazónica y el dulzor del plátano maduro piden una bebida fresca y ligeramente dulce.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Quinua Atamalada con Pollo a la Plancha</h3>
+          <div class="price-box">S/ 37</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Quinua andina cocida en caldo de vegetales, saborizada en salsa de ají amarillo con queso cajamarquino fundido, acompañada de cubos de pechuga a la plancha y mix de vegetales en reducción balsámica. Identidad andina en su máxima expresión.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Quinua andina, caldo de vegetales, ají amarillo, queso cajamarquino, pechuga de pollo, vegetales mixtos, vinagre balsámico, aceite de oliva.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🥛 Lácteos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino blanco Marqués de Riscal, Quri (coctel de autor con macerado de coca) o limonada de hierba luisa. El ají amarillo y el queso cajamarquino piden bebidas que respeten los sabores andinos.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== TÍPICOS CAJAMARQUINOS ===== -->
+<div class="category" id="tipicos">
+  <h2 class="category-title">🏔️ TÍPICOS CAJAMARQUINOS</h2>
+  <div class="dishes-grid">
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">1/2 Cuy Frito c/ Picante de Papa</h3>
+          <div class="price-box">S/ 47</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Media porción de cuy frito crujiente al estilo cajamarquino, acompañado de picante de papa tradicional con ajíes panca y amarillo, sarsa criolla acevichada y porción de arroz. El plato emblemático de la gastronomía andina del norte.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Cuy, papa amarilla y blanca, ají panca, ají amarillo, cebolla morada, tomate, cilantro, limón, arroz, ajo, orégano.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge safe">✓ Sin alérgenos comunes</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Chicha morada, cerveza Cusqueña o Pisco Sour. El picante del ají y la profundidad del cuy frito crujiente piden bebidas de carácter: una chicha morada casera o un pisco sour refrescan y equilibran.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Trucha Frita</h3>
+          <div class="price-box">S/ 40</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Trucha andina frita entera a la perfección, con piel dorada y crocante, acompañada de papas doradas, arroz blanco y sarsa criolla acevichada. Proteína de primera calidad de los ríos y lagunas de la sierra.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Trucha fresca andina, harina de trigo, papa, arroz, cebolla morada, tomate, ají amarillo, cilantro, limón, aceite.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🐟 Pescado</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino blanco Marqués de Riscal, Chilcano clásico o limonada de hierba buena. La trucha andina de carne rosada pide un vino blanco ligero o bebidas cítricas que realcen su frescura natural.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Chicharrón con Mote</h3>
+          <div class="price-box">S/ 40</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Crujiente chicharrón de cerdo dorado, acompañado de mote serrano (maíz blanco cocido) y sarsa criolla acevichada. El desayuno y almuerzo más emblemático de Cajamarca.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Panceta y costilla de cerdo, mote (maíz blanco serrano), cebolla morada, tomate, ají amarillo, cilantro, limón, sal, comino.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge safe">✓ Sin alérgenos comunes</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Chicha morada, cerveza Pilsen o gaseosa de cola. La grasa del chicharrón crujiente se equilibra con la acidez de la sarsa y una bebida fría que limpie el paladar entre bocado y bocado.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Humita con Queso</h3>
+          <div class="price-box">S/ 13</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Masa de choclo fresco andino molido, rellena de queso cajamarquino gratinado, envuelta en hoja de choclo y cocida al vapor. Acompañada de sarsa criolla. Tradición culinaria andina en su forma más pura.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Choclo fresco andino, queso cajamarquino, leche, manteca vegetal, anís en grano, sal, hoja de choclo.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🥛 Lácteos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Té de anís o manzanilla, café expreso o chocolate caliente. La dulzura del choclo fresco y la suavidad del queso local piden una bebida caliente que resalte los aromas anisados de la masa.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Tamal de Pollo</h3>
+          <div class="price-box">S/ 13</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Tamal cajamarquino de masa de maíz sazonada con ajíes y especias andinas, relleno de pollo guisado, envuelto en hoja de plátano y cocido al vapor. Acompañado de sarsa criolla. Sabor ancestral e inconfundible.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Harina de maíz, pollo, ají panca, ají amarillo, cebolla, ajo, comino, manteca, hoja de plátano.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge safe">✓ Sin alérgenos comunes</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Café, té de hierba luisa o chicha morada. El perfil especiado y terroso de la masa de maíz con ají panca armoniza con bebidas cálidas o con la dulzura morada de la chicha.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== CLÁSICOS DE MAT'U ===== -->
+<div class="category" id="clasicos">
+  <h2 class="category-title">⭐ LOS CLÁSICOS DE MAT'U</h2>
+  <div class="dishes-grid">
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Lomo Saltado</h3>
+          <div class="price-box">S/ 48</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Lomo fino de res flameado al wok al estilo MAT'U con papas amarillas fritas, cebolla y tomate en su punto. Acompañado de porción de arroz con choclo. El plato bandera de la cocina peruana en su versión más cuidada.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Lomo fino de res, papa amarilla, cebolla roja, tomate, sillao, vinagre, ají amarillo, arroz con choclo, cilantro, ajo.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🫘 Soya</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino tinto Navarro Correas o Faustino VII Tempranillo, o cerveza Cusqueña. El sillao y el flambeado piden un vino con taninos suaves que no compitan, o una cerveza rubia limpia y refrescante.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Pechuga a la Plancha</h3>
+          <div class="price-box">S/ 37</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Pechuga de pollo a la plancha jugosa y bien sazonada, acompañada de dos guarniciones a elección: arroz, papas fritas, ensalada fresca o ensalada cocida. Opción saludable, versátil y proteica.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Pechuga de pollo, ajo, orégano, sal, pimienta, limón. Guarniciones: arroz, papas, ensalada fresca o cocida con vegetales de temporada.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge safe">✓ Sin alérgenos comunes</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino blanco Marqués de Riscal (copa), limonada de hierba luisa o agua con gas con limón. Una pechuga a la plancha es el lienzo perfecto para un vino blanco aromático que aporte lo que el plato no tiene.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Milanesa Crunchy</h3>
+          <div class="price-box">S/ 37</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Crujiente milanesa de pollo apanada con panko japonés, con una textura exterior dorada y un interior jugoso. Acompañada de dos guarniciones a elección. Extra crunchy, extra satisfactoria.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Pechuga de pollo, panko, huevo, harina, sal, pimienta, ajo. Guarniciones: arroz, papas fritas, ensalada fresca o cocida.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Cerveza Stella Artois, limonada clásica o Maracuyá Sour. El apanado con panko crujiente pide bebidas refrescantes y con algo de acidez que limpien la boca entre bocado y bocado.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Asado de Res c/ Puré</h3>
+          <div class="price-box">S/ 40</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Láminas de asado de res guisado lentamente hasta lograr una textura tierna y jugosa, sobre un cremoso puré de papa amarilla andina. Acompañado de porción de arroz con choclo. Sabor casero en su máxima expresión.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Asado de res, papa amarilla andina, mantequilla, leche, cebolla, ajo, tomate, especias, arroz con choclo.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🥛 Lácteos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino tinto Navarro Correas o Faustino VII Tempranillo (copa). El puré de papa amarilla con mantequilla y el asado guisado son un maridaje clásico con vino tinto de cuerpo medio y notas especiadas.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Lomo al Strogonoff</h3>
+          <div class="price-box">S/ 45</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Lomo fino en trozos con champiñones frescos y cebolla blanca en cremosa salsa strogonoff, acompañado de papas fritas doradas y porción de arroz con choclo. Elegancia rusa con corazón peruano.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Lomo fino de res, champiñones, cebolla blanca, crema de leche, mostaza, vino blanco, papas fritas, arroz con choclo, mantequilla.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🥛 Lácteos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino tinto Navarro Correas o Faustino VII, o whisky en las rocas (Grand Old Parr). La crema y los champiñones piden un vino tinto de acidez media; los amantes del whisky encontrarán notas que complementan la salsa.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Fetuccini en Salsa c/ Lomo Fino al Jugo</h3>
+          <div class="price-box">S/ 47</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Pasta fettuccini bañada en salsa a elección (a la Huancaína con queso y ají amarillo, o a lo Alfredo con crema), acompañada de jugosos trozos de lomo fino al jugo. Fusión perfecta entre pasta italiana y cocina peruana.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Fettuccini, lomo fino de res, queso fresco o crema de leche, ají amarillo (opción huancaína), ajo, cebolla, especias.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino tinto Navarro Correas (salsa huancaína) o vino blanco Marqués de Riscal (salsa alfredo). Cada salsa pide su propio maridaje: el ají amarillo con tinto, la crema alfredo con blanco.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== OPCIONES VEGETARIANAS ===== -->
+<div class="category" id="veggie">
+  <h2 class="category-title">🌿 OPCIONES VEGETARIANAS</h2>
+  <div class="dishes-grid">
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Tacos Vegetarianos</h3>
+          <div class="price-box">S/ 32</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">3 taquitos con champiñones salteados al estilo MAT'U, chalaquita fresca de cebolla, tomate y ají, y salsa guacamole cremosa. Igual de sabrosos que su versión con pollo.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Tortilla de maíz/trigo, champiñones, cebolla, tomate, ají amarillo, cilantro, palta, limón, sal.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Aguaymanto Sour, Veraniego (coctel de autor) o limonada de hierba luisa. Los champiñones salteados con guacamole piden bebidas cítricas y frescas que resalten la frescura vegetal.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Poke Bowl Vegetariano</h3>
+          <div class="price-box">S/ 32</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Tazón con base de arroz o quinua, vegetales cocidos y frescos de temporada, champiñones salteados, palta cremosa y salsa acevichada. Completo, nutritivo y 100% vegetal.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Arroz o quinua andina, champiñones, palta, vegetales mixtos, limón, ají amarillo, cebolla morada, cilantro.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge safe">✓ Sin alérgenos comunes</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Infusión de menta fría, té helado de maracuyá o vino blanco Marqués de Riscal. Plato fresco y ligero que se complementa mejor con bebidas sin alcohol o vinos muy frescos.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Quinua Atamalada Vegetariana</h3>
+          <div class="price-box">S/ 32</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Quinua andina en caldo de vegetales, saborizada con ají amarillo y queso cajamarquino, acompañada de champiñones salteados y mix de vegetales en reducción balsámica. El plato más andino de la carta vegetariana.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Quinua andina, caldo de vegetales, ají amarillo, queso cajamarquino, champiñones, vegetales mixtos, vinagre balsámico.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🥛 Lácteos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Quri (coctel de autor con coca y piña) o limonada de hierba luisa. El ají amarillo y el queso local son sabores andinos que armonizan con cocteles de ingredientes peruanos.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Champiñones Salteados</h3>
+          <div class="price-box">S/ 32</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Champiñones en trozos flameados al wok al estilo MAT'U, con papas amarillas fritas, cebolla y tomate. Acompañado de porción de arroz con choclo. La versión vegetariana del lomo saltado: misma técnica, distinto protagonista.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Champiñones, papa amarilla, cebolla roja, tomate, sillao, vinagre, ají amarillo, arroz con choclo, cilantro.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🫘 Soya</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Vino tinto ligero Navarro Correas (copa), Maracuyá Sour o cerveza Pilsen. Los champiñones flameados con sillao tienen notas umami que un vino ligero o un sour frutal complementan muy bien.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Pizzeta Vegetariana</h3>
+          <div class="price-box">S/ 35</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Pizzeta de 4 trozos con salsa de tomate artesanal, champiñones, queso cajamarquino local, albahaca fresca, espinaca y tomates confitados. Fresca, aromática y con el sello del queso local.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Masa de pizza, salsa de tomate, champiñones, queso cajamarquino, albahaca, espinaca fresca, tomates confitados.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Aperol Spritz, Negroni o vino tinto Faustino VII Tempranillo (copa). La albahaca, los tomates confitados y el queso cajamarquino son un trío que un Aperol o un Tempranillo elevan a otra dimensión.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== MENÚ KIDS ===== -->
+<div class="category" id="kids">
+  <h2 class="category-title">👦 MENÚ KIDS</h2>
+  <p style="color:#888;margin-bottom:20px;font-style:italic;">Todos los platos del Menú Kids incluyen una bebida: vaso de limonada o chicha morada.</p>
+  <div class="dishes-grid">
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Fetuccini en Salsa Alfredo c/ Trozos de Pollo al Grill + Bebida</h3>
+          <div class="price-box">S/ 31</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Pasta fettuccini bañada en cremosa salsa alfredo suave, con trozos de pechuga de pollo al grill. Acompañado de vaso de limonada o chicha morada. Sabor suave que los niños aman.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Fettuccini, crema de leche, queso parmesano, pechuga de pollo, mantequilla, ajo, sal.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍹 Incluye:</div>
+          <div>Vaso de limonada clásica o chicha morada. La salsa alfredo cremosa se equilibra con la acidez refrescante de la limonada.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Fetuccini en Salsa Roja c/ Trozos de Pollo al Grill + Bebida</h3>
+          <div class="price-box">S/ 31</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Fettuccini con salsa de tomate casera y trozos de pechuga de pollo al grill. Una versión sencilla y deliciosa del clásico napolitano, perfecta para los más pequeños.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Fettuccini, salsa de tomate, pechuga de pollo, ajo, cebolla, orégano, sal.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍹 Incluye:</div>
+          <div>Vaso de limonada clásica o chicha morada.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Chicharrón de Pollo c/ Papas Fritas y Arroz + Bebida</h3>
+          <div class="price-box">S/ 31</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Crujiente chicharrón de pollo dorado, acompañado de papas fritas y arroz blanco. El favorito universal de los niños en versión peruana, jugoso por dentro y crujiente por fuera.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Trozos de pollo (pierna/pechuga), harina, huevo, ajo, sal, pimienta, papas fritas, arroz.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍹 Incluye:</div>
+          <div>Vaso de limonada clásica o chicha morada.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Pizzeta Hawaiana Kids + Bebida</h3>
+          <div class="price-box">S/ 31</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Pizzeta de 4 trozos con salsa de tomate, jamón, queso cajamarquino y piña. La combinación dulce-salada favorita de los niños, con el toque especial del queso local de Cajamarca.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Masa de pizza, salsa de tomate, jamón, queso cajamarquino, piña.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍹 Incluye:</div>
+          <div>Vaso de limonada clásica o chicha morada.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== POSTRES ===== -->
+<div class="category" id="postres">
+  <h2 class="category-title">🍮 POSTRES</h2>
+  <div class="dishes-grid">
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Cuchareable de Chocolate</h3>
+          <div class="price-box">S/ 17</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Keke de chocolate esponjoso, fudge caliente de chocolate, manjar blanco (dulce de leche peruano) y chips de cacao amargo. Para comer con cuchara, capa a capa. Un destino chocolatero irresistible.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Harina, cacao en polvo, huevo, azúcar, mantequilla, fudge de chocolate, manjar blanco (leche, azúcar), chips de cacao.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Café expreso doble, Baileys en las rocas o Shot de Pisco Portón Mosto Verde. El chocolate intenso necesita la amargura del espresso o la suavidad cremosa del Baileys para brillar.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Mousse de Aguaymanto</h3>
+          <div class="price-box">S/ 16</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Mousse aireado y frutado con base de aguaymanto (fruta andina local), acompañado de aguaymantos frescos, coulis de fruta y galleta de vainilla crocante. Frescura andina en forma de postre.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Aguaymanto fresco, crema de leche, azúcar, gelatina sin sabor, aguaymantos frescos, galleta de vainilla, azúcar glass.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🥛 Lácteos</span>
+            <span class="allergen-badge">🌾 Gluten</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Aguaymanto Sour, té de menta o café latte. El aguaymanto es una fruta andina con acidez y dulzor únicos; un sour de la misma fruta crea un maridaje espejo delicioso.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Alfajor MAT'U</h3>
+          <div class="price-box">S/ 8</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Tradicional alfajor de maicena al estilo MAT'U, con manjar blanco clásico peruano y azúcar impalpable. Suave, meloso y con ese sabor que recuerda a la abuela. El pequeño placer perfecto.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Maicena, harina, mantequilla, huevo, azúcar, manjar blanco (dulce de leche), azúcar impalpable, esencia de vainilla.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Café americano o capuccino. El alfajor de maicena y manjar es el acompañamiento perfecto del café de la tarde. Un dúo clásico e irremplazable.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Galleta de Chocochips MAT'U</h3>
+          <div class="price-box">S/ 8</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Galleta artesanal al estilo MAT'U con chispas de chocolate, crujiente por fuera y suave por dentro. Perfecta para acompañar con café. Sencilla, directa y deliciosa.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Harina, mantequilla, azúcar morena, huevo, vainilla, chips de chocolate semi-amargo, bicarbonato, sal.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Café expreso, latte o capuccino. La galleta de chocochips fue creada para vivir junto al café. Los chips de chocolate semi-amargo y el café son un maridaje de nivel.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Brownie con Helado</h3>
+          <div class="price-box">S/ 17</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Brownie húmedo y fudgy bañado en salsa de fudge caliente, acompañado de helado de temporada. El contraste entre el calor del brownie y el frío del helado es puro placer sensorial.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Chocolate amargo, mantequilla, huevo, azúcar, harina, fudge de chocolate, helado (temporada).</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Baileys, café expreso doble o Shot Jagermeister. La intensidad del brownie con fudge caliente pide la contundencia del Baileys cremoso o la amargura limpia del expresso.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Merengado de Limón</h3>
+          <div class="price-box">S/ 16</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Base de crema pastelera de limón ácida y sedosa, galleta de vainilla crocante y berries en almíbar. Fresco, elegante y con el equilibrio perfecto entre dulce y ácido.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Limón, leche, yema de huevo, azúcar, maicena, galleta de vainilla, berries (frutilla, arándano), almíbar.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🥛 Lácteos</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+            <span class="allergen-badge">🌾 Gluten</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Aguaymanto Sour, Maracuyá Sour o té helado de limón. La acidez del limón y los berries armoniza con cocteles o infusiones cítricas que amplifiquen esas notas frutales.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Waffles de la Casa</h3>
+          <div class="price-box">S/ 18</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">4 porciones de waffles artesanales crujientes acompañados de arándanos frescos, miel dorada y helado de temporada. Clásico reconfortante que satisface todas las edades.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes Principales:</div>
+          <div class="section-content">Harina, leche, huevo, mantequilla, azúcar, vainilla, arándanos, miel, helado de temporada.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges">
+            <span class="allergen-badge">🌾 Gluten</span>
+            <span class="allergen-badge">🥛 Lácteos</span>
+            <span class="allergen-badge">🥚 Huevo</span>
+          </div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍷 Maridaje Recomendado:</div>
+          <div>Café latte, capuccino o Frozen Fruta de temporada. Los waffles con miel y arándanos son perfectos con un café con leche cremoso o un frozen frutal refrescante.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== CÓCTELES ===== -->
+<div class="category" id="cocteles">
+  <h2 class="category-title">🍹 CÓCTELES</h2>
+
+  <h3 style="color:#764ba2;font-size:1.5em;margin-bottom:20px;margin-top:10px;">✍️ Cócteles de Autor</h3>
+  <div class="dishes-grid">
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Calientito MAT'U</h3>
+          <div class="price-box">S/ 28</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Coctel caliente con infusión de hierbas andinas, miel natural, pisco y jugo de naranja. El abrazo líquido de los Andes: reconfortante, aromático y con el carácter del pisco peruano.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes:</div>
+          <div class="section-content">Pisco, infusión de hierbas andinas, miel de abeja, jugo de naranja.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges"><span class="allergen-badge safe">✓ Sin alérgenos comunes</span></div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍽️ Maridaje con Platos:</div>
+          <div>Ideal con Quinua Atamalada, Cuy Frito o cualquier plato típico cajamarquino. Las hierbas andinas crean un puente aromático con los sabores de la sierra.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Quri</h3>
+          <div class="price-box">S/ 25</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Macerado de hojas de coca (tradición andina milenaria), jugo de piña tropical, zumo de limón, jarabe de goma y canela en polvo. Dulce, exótico y con la esencia sagrada de los Andes.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes:</div>
+          <div class="section-content">Macerado de coca, jugo de piña, zumo de limón, jarabe de goma, canela en polvo.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges"><span class="allergen-badge safe">✓ Sin alérgenos comunes</span></div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍽️ Maridaje con Platos:</div>
+          <div>Poke Bowls, Ensalada Oriental o Tacos de Pollo. La canela y la piña crean puentes con sabores frescos y aromáticos.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Veraniego</h3>
+          <div class="price-box">S/ 25</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Macerado de maracuyá tropical, jarabe de hierba luisa aromático y zumo de limón. Ligero, refrescante y lleno de sabores peruanos. El coctel del verano cajamarquino.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes:</div>
+          <div class="section-content">Macerado de maracuyá, jarabe de hierba luisa, zumo de limón.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges"><span class="allergen-badge safe">✓ Sin alérgenos comunes</span></div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍽️ Maridaje con Platos:</div>
+          <div>Ceviche de Pulpo, Trucha Frita o Poke Bowl de Langostinos. La acidez del maracuyá y la hierba luisa potencian los sabores marinos y cítricos.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Lady Blue</h3>
+          <div class="price-box">S/ 35</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Gin premium con blue curaçao de naranja y zumo de limón. Un coctel de color azul eléctrico espectacular, cítrico y aromático. Para quienes quieren un coctel que sea también una experiencia visual.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes:</div>
+          <div class="section-content">Gin, blue curaçao, zumo de limón.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges"><span class="allergen-badge safe">✓ Sin alérgenos comunes</span></div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍽️ Maridaje con Platos:</div>
+          <div>Pulpo al Olivo, Arroz Meloso de Langostinos o Pizzeta MAT'U. El gin y el curaçao de naranja armonizan con mariscos y quesos curados.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Daiquiri de Maracuyá en Tiki</h3>
+          <div class="price-box">S/ 28</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Zumo de maracuyá tropical, ron blanco y jarabe de goma servido en vaso tiki. Tropical, refrescante y con el ron que lo convierte en una fiesta en la boca.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes:</div>
+          <div class="section-content">Zumo de maracuyá, ron blanco, jarabe de goma.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges"><span class="allergen-badge safe">✓ Sin alérgenos comunes</span></div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍽️ Maridaje con Platos:</div>
+          <div>Alitas en Salsa Pancamiel, Tacos de Pollo o Crispy Chicken Burger. El maracuyá y el ron complementan sabores dulces-picantes y apanados crujientes.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header">
+          <h3 class="dish-name">Daiquiri de Piña en Tiki</h3>
+          <div class="price-box">S/ 28</div>
+        </div>
+        <div class="section">
+          <div class="section-title">📝 Descripción:</div>
+          <div class="section-content">Pulpa de piña natural, ron blanco y crema de coco. Una Piña Colada en formato daiquiri: tropical, cremoso y festivo. Para transportarse al Caribe desde Cajamarca.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">🥘 Ingredientes:</div>
+          <div class="section-content">Pulpa de piña, ron blanco, crema de coco.</div>
+        </div>
+        <div class="section">
+          <div class="section-title">⚠️ Posibles Alérgenos:</div>
+          <div class="allergen-badges"><span class="allergen-badge safe">✓ Sin alérgenos comunes</span></div>
+        </div>
+        <div class="pairing-box">
+          <div class="pairing-title">🍽️ Maridaje con Platos:</div>
+          <div>Pizzeta Hawaiana, Arroz Chaufa Colorado o Tacos de Pollo. El coco y la piña crean un maridaje tropical irresistible con platos de sabores dulces o especiados.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <h3 style="color:#764ba2;font-size:1.5em;margin-bottom:20px;margin-top:40px;">🍋 Sours</h3>
+  <div class="dishes-grid">
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Pisco Sour</h3><div class="price-box">S/ 30</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">El coctel peruano por excelencia. Pisco La Caravedo de Portón (premium), huevo fresco, zumo de limón y jarabe de goma. Espumoso, ácido y con el carácter inconfundible del pisco de uva quebranta.</div></div>
+        <div class="section"><div class="section-title">🥘 Ingredientes:</div><div class="section-content">Pisco La Caravedo de Portón, huevo, zumo de limón, jarabe de goma, hielo.</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge">🥚 Huevo</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje con Platos:</div><div>Ceviche de Pulpo, Pulpo al Olivo, Tequeños de Asado. El maridaje nacional peruano: ceviche + pisco sour es una ley no escrita de la gastronomía peruana.</div></div>
+      </div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Maracuyá / Aguaymanto Sour / Otras Frutas de Estación</h3><div class="price-box">S/ 30</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">El clásico Pisco Sour con el toque frutal de maracuyá tropical, aguaymanto andino (fruta local) u otras frutas de temporada. Cada fruta aporta su personalidad al coctel peruano más famoso.</div></div>
+        <div class="section"><div class="section-title">🥘 Ingredientes:</div><div class="section-content">Pisco, fruta a elección (maracuyá, aguaymanto u otras), huevo, jarabe de goma, limón, hielo.</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge">🥚 Huevo</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje con Platos:</div><div>Aguaymanto Sour con Mousse de Aguaymanto (maridaje espejo); Maracuyá Sour con Poke Bowls y ensaladas frescas; Sours de temporada con ceviche.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="color:#764ba2;font-size:1.5em;margin-bottom:20px;margin-top:40px;">🥃 Chilcanos</h3>
+  <div class="dishes-grid">
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Chilcano Clásico / Aguaymanto / Maracuyá / Frutas de Estación</h3><div class="price-box">S/ 25–27</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">Pisco La Caravedo de Portón, zumo de limón y ginger ale refrescante. El aperitivo peruano ideal: largo, burbujeante y con el jengibre del ginger ale que lo hace único. En versión clásica o frutada (aguaymanto, maracuyá u otras frutas S/27).</div></div>
+        <div class="section"><div class="section-title">🥘 Ingredientes:</div><div class="section-content">Pisco La Caravedo de Portón, zumo de limón, ginger ale, hielo. Versión frutada: + fruta a elección.</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge safe">✓ Sin alérgenos comunes</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje con Platos:</div><div>Trucha Frita, Sándwich de Asado, Piqueos en general. El ginger ale limpia el paladar entre bocados de piqueos y el limón realza sabores de mar y tierra.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="color:#764ba2;font-size:1.5em;margin-bottom:20px;margin-top:40px;">🍸 Cócteles Clásicos</h3>
+  <div class="dishes-grid">
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Mojito / Mojito Frutado</h3><div class="price-box">S/ 26</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">Ron blanco, hierba buena fresca muddled, jarabe de goma y agua con gas. El clásico cubano en su versión más refrescante. Versión frutada con frutas de temporada.</div></div>
+        <div class="section"><div class="section-title">🥘 Ingredientes:</div><div class="section-content">Ron blanco, hierba buena, jarabe de goma, agua con gas, limón, hielo.</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge safe">✓ Sin alérgenos comunes</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje con Platos:</div><div>Tacos de Pollo, Alitas Pancamiel, Chicharrón con Mote. La hierba buena y la burbuja del agua con gas armonizan con sabores fuertes y especiados.</div></div>
+      </div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Aperol Spritz</h3><div class="price-box">S/ 32</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">Aperol amargo-dulce, Cinzano Prosseco italiano y agua con gas. El aperitivo italiano de moda: naranja vibrante, efervescente y con ese amargor elegante que abre el apetito.</div></div>
+        <div class="section"><div class="section-title">🥘 Ingredientes:</div><div class="section-content">Aperol, Cinzano Prosseco, agua con gas, rodaja de naranja.</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge">🍇 Sulfitos</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje con Platos:</div><div>Pulpo al Olivo, Pizzetas, Ravioles Norteños. El Aperol Spritz es el aperitivo perfecto antes de cualquier plato; su amargor abre el apetito sin saturar el paladar.</div></div>
+      </div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Negroni</h3><div class="price-box">S/ 39</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">Gin premium, Campari y Vermouth Rosé sobre hielo con rodaja de naranja. El coctel más sofisticado de la carta: amargo, complejo y con capas aromáticas infinitas. Para los paladares más aventureros.</div></div>
+        <div class="section"><div class="section-title">🥘 Ingredientes:</div><div class="section-content">Gin, Campari, Vermouth Rosé, rodaja de naranja, hielo.</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge safe">✓ Sin alérgenos comunes</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje con Platos:</div><div>Pulpo Parrillero, Lomo Saltado o Lasagna de Carne. El Negroni es uno de los pocos cocteles que puede acompañar carnes y platos complejos; su amargura limpia el paladar entre bocados.</div></div>
+      </div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Margarita</h3><div class="price-box">S/ 29</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">Tequila blanco, triple sec de naranja, zumo de limón y borde de sal. El clásico mexicano: agrio, salado y con el tequila como protagonista indiscutible.</div></div>
+        <div class="section"><div class="section-title">🥘 Ingredientes:</div><div class="section-content">Tequila blanco, triple sec, zumo de limón, sal en el borde.</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge safe">✓ Sin alérgenos comunes</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje con Platos:</div><div>Tacos de Pollo o Vegetarianos, Ceviche de Pulpo, Piqueos variados. Tequila + limón + sal = el acompañante natural de tacos y ceviches.</div></div>
+      </div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Moscow Mule</h3><div class="price-box">S/ 29</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">Vodka, zumo de limón, kión (jengibre fresco) y ginger ale picante. Refrescante, picante y con ese toque de jengibre que lo hace inconfundible. Servido tradicionalmente en vaso de cobre.</div></div>
+        <div class="section"><div class="section-title">🥘 Ingredientes:</div><div class="section-content">Vodka, zumo de limón, jengibre (kión), ginger ale, hielo.</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge safe">✓ Sin alérgenos comunes</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje con Platos:</div><div>MAT'U Burger, Crispy Chicken Burger, Alitas Pancamiel. El picante del jengibre es un aliado poderoso de las hamburguesas y los aperitivos con proteínas.</div></div>
+      </div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Gin Tonic Tanqueray / Frutado Tanqueray Royale</h3><div class="price-box">S/ 40</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">Gin Tanqueray premium, agua tónica y zumo de limón. El long drink británico por excelencia en versión premium. Versión Royale con frutas de temporada para una experiencia más festiva.</div></div>
+        <div class="section"><div class="section-title">🥘 Ingredientes:</div><div class="section-content">Gin Tanqueray, agua tónica, zumo de limón. Royale: + frutas de temporada.</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge safe">✓ Sin alérgenos comunes</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje con Platos:</div><div>Pulpo al Olivo, Lasagna, Fetuccini con Lomo. El Tanqueray con su perfil botánico y cítrico eleva los platos de pasta y mariscos a otro nivel.</div></div>
+      </div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Cuba Libre / Perú Libre / Algarrobina / Piña Colada / Vodka Sunrise / Tequila Sunrise / Vodka Tonic</h3><div class="price-box">S/ 24–27</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">Clásicos de barra infalibles: Cuba Libre (ron, cola, limón S/26), Perú Libre (pisco quebranta, cola, limón S/24), Algarrobina (pisco, miel de algarrobo, leche, huevo S/27), Piña Colada (ron, piña, coco S/27), Vodka/Tequila Sunrise (vodka o tequila, naranja, granadina S/27–28), Vodka Tonic (vodka, tónica, limón S/27).</div></div>
+        <div class="section"><div class="section-title">🥘 Ingredientes:</div><div class="section-content">Según coctel: ron/pisco/vodka/tequila + complementos (cola, jugo, leche, cremas, granadina).</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge">🥚 Huevo (Algarrobina)</span><span class="allergen-badge">🥛 Lácteos (Algarrobina, Piña Colada)</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje con Platos:</div><div>Cuba/Perú Libre con Lomo Saltado o Hamburguesas; Algarrobina como digestivo o con postres de chocolate; Piña Colada con Tacos y Piqueos tropicales; Sunrises con Ensaladas y Poke Bowls.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BEBIDAS ===== -->
+<div class="category" id="bebidas">
+  <h2 class="category-title">🥤 BEBIDAS</h2>
+
+  <h3 style="color:#764ba2;font-size:1.5em;margin-bottom:20px;">🍺 Cervezas y Vinos</h3>
+  <div class="dishes-grid">
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Cervezas</h3><div class="price-box">S/ 14–16</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">Pilsen (S/14), Cusqueña (S/14), Corona (S/16) y Stella Artois (S/16). De peruanas reconfortantes a importadas premium. La Cusqueña andina para acompañar platos típicos; la Corona ligera para piqueos; la Stella Artois sofisticada para carnes.</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge">🌾 Gluten</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje:</div><div>Pilsen/Cusqueña: Lomo Saltado, Chicharrón, Cuy. Corona/Stella: Hamburguesas, Alitas, Piqueos en general.</div></div>
+      </div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Vinos</h3><div class="price-box">Copa S/ 25 / Botella S/ 130</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">Vino Tinto: Navarro Correas Colección Privada y Faustino VII Semi Crianza Tempranillo (copa S/25 / botella S/130). Vino Blanco: Marqués de Riscal (copa S/25 / botella S/130). Descorche de botella propia: S/40.</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge">🍇 Sulfitos</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje:</div><div>Tintos: Lomo Saltado, Asado, Lasagna, pasta con carne. Blanco Marqués de Riscal: Trucha, Langostinos, Pulpos, Pechuga a la Plancha, pasta de mariscos.</div></div>
+      </div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Whisky / Pisco / Ron</h3><div class="price-box">Desde S/ 33</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">Whisky en las rocas Grand Old Parr 12 años (S/33); Botella JW Double Black (S/340), JW Gold Label (S/490), Old Parr (S/270). Pisco Portón Mosto Verde botella (S/260). Ron Havana Club 7 años (S/240), Flor de Caña 7 años (S/280).</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge safe">✓ Sin alérgenos comunes</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje:</div><div>Whisky: Lomo Strogonoff, carnes a la parrilla, postres de chocolate. Ron: Chaufa Colorado, Tacos, cocteles. Pisco Premium: para apreciar solo o en cocteles especiales.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="color:#764ba2;font-size:1.5em;margin-bottom:20px;margin-top:40px;">🥤 Bebidas Frías</h3>
+  <div class="dishes-grid">
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Bebidas Frías Variadas</h3><div class="price-box">S/ 6–24</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">Agua mineral nacional con/sin gas (S/6), gaseosas 500ml (S/8), chicha morada (S/12), maracuyá (S/12), limonadas clásica/hierba buena/hierba luisa (S/12), jugos naturales de temporada (S/12), frozen fruta de temporada (S/12), té helado clásico/maracuyá (S/12). Jarras de todas las bebidas anteriores (S/24).</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge safe">✓ Sin alérgenos comunes</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje:</div><div>Chicha morada: Cuy, Chicharrón, platos típicos. Limonada hierba buena: Piqueos, Poke Bowls. Maracuyá: Ensaladas, mariscos. Jugos naturales: cualquier plato ligero. Las jarras son ideales para grupos.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="color:#764ba2;font-size:1.5em;margin-bottom:20px;margin-top:40px;">☕ Bebidas Calientes</h3>
+  <div class="dishes-grid">
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Cafés (Marca Britt)</h3><div class="price-box">S/ 8–12</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">Expreso (S/8), Expreso Doble (S/12), Café Americano (S/10), Capuccino (S/12), Latte (S/12). Café de especialidad marca Britt, seleccionado para ofrecer la mejor experiencia del grano peruano.</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge">🥛 Lácteos (capuccino/latte)</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje:</div><div>Expreso doble: Brownie, Cuchareable de Chocolate, Galleta de Chocochips. Latte/Capuccino: Alfajor MAT'U, Waffles, Mousse de Aguaymanto. El café Britt con los postres MAT'U es la combinación perfecta para cerrar la experiencia.</div></div>
+      </div>
+    </div>
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Infusiones Naturales</h3><div class="price-box">S/ 14 / Jarras S/ 24</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">Tetera 600ml (S/14): manzanilla, eucalipto, cedrón, coca, hierba luisa, menta, anís. Consultar hierbas disponibles. Jarras de hierba buena, hierba luisa, maracuyá, chicha morada, té helado clásico y de maracuyá (S/24 c/u).</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge safe">✓ Sin alérgenos comunes</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje:</div><div>Menta/Hierba luisa: Sopas, Chupe, platos ligeros. Coca/Manzanilla: Platos típicos cajamarquinos. Anís: Humita con Queso, postres. Las infusiones andinas son el maridaje más auténtico con la cocina de la sierra.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="color:#764ba2;font-size:1.5em;margin-bottom:20px;margin-top:40px;">🥃 Shots y Otros</h3>
+  <div class="dishes-grid">
+    <div class="dish-card">
+      <div class="dish-image-wrapper">
+        <div class="dish-image-placeholder" onclick="openImgModal(this.closest(&#39;.dish-image-wrapper&#39;))">
+          <span class="ph-icon">📷</span>
+          <span class="ph-text">Agregar foto del plato</span>
+          <span class="ph-sub">Archivo o URL de internet</span>
+        </div>
+      </div>
+      <div class="dish-content">
+        <div class="dish-header"><h3 class="dish-name">Shots y Licores</h3><div class="price-box">S/ 15–30</div></div>
+        <div class="section"><div class="section-title">📝 Descripción:</div><div class="section-content">Shot Macerado de la Casa (S/15, consultar frutas de temporada), Shot de Tequila Cuervo (S/25), Shot Jagermeister (S/26), Baileys (S/26), Anis Najar (S/30), Shot Pisco Portón Mosto Verde (S/30).</div></div>
+        <div class="section"><div class="section-title">⚠️ Posibles Alérgenos:</div><div class="allergen-badges"><span class="allergen-badge">🥛 Lácteos (Baileys)</span></div></div>
+        <div class="pairing-box"><div class="pairing-title">🍽️ Maridaje:</div><div>Baileys y Jagermeister: digestivos ideales después de platos de carne o con postres de chocolate. Shot Pisco Premium: para celebrar y apreciar el mejor destilado peruano. Macerado de la Casa: el colofón perfecto de cualquier noche en MAT'U.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <h3 style="color:#667eea;margin-bottom:15px;font-size:1.5em;">📋 Resumen de Alérgenos por Categoría</h3>
+  <div class="allergen-summary">
+    <div class="allergen-summary-item"><strong style="color:#f5576c;">🌾 Gluten:</strong> Tequeños, Pizzetas, Sánguches, Hamburguesas, Ensalada Oriental, Sopas, Fetuccinis, Ravioles, Lasagna, Trucha, Milanesa, Alitas (salsa), Tacos, Postres</div>
+    <div class="allergen-summary-item"><strong style="color:#f5576c;">🥛 Lácteos:</strong> Pizzetas, Hamburguesas, Humita, Chupe, Sopas, Lasagna, Ravioles, Fetuccinis, Asado c/Puré, Lomo Strogonoff, Quinua Atamalada, Postres, Cafés</div>
+    <div class="allergen-summary-item"><strong style="color:#f5576c;">🥚 Huevo:</strong> Tequeños, Sánguches, Tostadas, Hamburguesas, Ensalada Oriental, Sopa Minuta, Chupe, Pulpo al Olivo, Pulpo Parrillero, Chaufa, Postres, Pisco Sour</div>
+    <div class="allergen-summary-item"><strong style="color:#f5576c;">🦐 Mariscos:</strong> Poke Bowl Langostinos, Arroz Meloso Langostinos, Fettuccini Langostinos, Chupe de Langostinos</div>
+    <div class="allergen-summary-item"><strong style="color:#f5576c;">🦑 Cefalópodos:</strong> Ceviche de Pulpo, Pulpo al Olivo, Pulpo Parrillero</div>
+    <div class="allergen-summary-item"><strong style="color:#f5576c;">🫘 Soya:</strong> Alitas Pancamiel, Ensalada Oriental, Lomo Saltado, Champiñones Salteados, Chaufa Colorado</div>
+    <div class="allergen-summary-item"><strong style="color:#f5576c;">🐟 Pescado:</strong> Trucha Frita</div>
+    <div class="allergen-summary-item"><strong style="color:#51cf66;">✓ Sin Alérgenos Comunes:</strong> Cuy Frito, Chicharrón con Mote, Tamal de Pollo, Pechuga a la Plancha, Poke Bowl c/Pollo, Cócteles de autor (excepto sours y algarrobina)</div>
+  </div>
+  <p style="margin-top:25px;color:#764ba2;font-weight:bold;font-size:1em;">⚠️ Si tienes alguna alergia, es MUY IMPORTANTE alertar a tu mesero. Podemos recomendarte una alternativa.</p>
+  <p style="margin-top:10px;color:#999;font-size:0.85em;">© 2026 MAT'U Restobar · Portal del Marqués Hotel · Cajamarca, Perú · Todos los precios en soles incluyen impuestos de ley.</p>
+</footer>
+
+</div>
+
+<!-- ===== MODAL IMAGEN ===== -->
+<div class="img-modal-overlay" id="imgModalOverlay">
+  <div class="img-modal">
+    <button class="img-modal-close" onclick="closeImgModal()">✕</button>
+    <h3>📷 Agregar imagen al plato</h3>
+    <div class="img-modal-tabs">
+      <button class="img-modal-tab" id="tabFile" onclick="switchImgTab(&#39;file&#39;)">📁 Desde archivo</button>
+      <button class="img-modal-tab active" id="tabUrl" onclick="switchImgTab(&#39;url&#39;)">🌐 Desde URL</button>
+    </div>
+    <!-- Panel archivo -->
+    <div class="img-modal-panel" id="panelFile">
+      <div class="img-modal-label">Selecciona una imagen de tu dispositivo:</div>
+      <label class="img-modal-file-btn">
+        <span>📂</span><span>Elegir archivo de imagen</span>
+        <input type="file" class="img-modal-file-input" id="imgFileInput" accept="image/*" onchange="handleFileSelect(event)">
+      </label>
+    </div>
+    <!-- Panel URL -->
+    <div class="img-modal-panel active" id="panelUrl">
+      <div class="img-modal-label">Pega la URL de la imagen:</div>
+      <div class="img-modal-url-row">
+        <input type="text" class="img-modal-url-input" id="imgUrlInput" placeholder="https://ejemplo.com/foto.jpg">
+        <button class="img-modal-url-btn" onclick="previewUrl()">Ver</button>
+      </div>
+      <div class="img-modal-preview-error" id="urlError" style="display: none;">⚠️ No se pudo cargar la imagen. Verifica la URL.</div>
+    </div>
+    <!-- Preview compartida -->
+    <div class="img-modal-preview" id="imgPreview" style="display: block;">
+      <img id="imgPreviewImg" src="./Menú Mat&#39;u Restobar 2026 - Guía Completa_files/Tequeños-with-chicken-and-oriental-sauce.-jpg-1.jpg" alt="Preview">
+    </div>
+    <button class="img-modal-confirm" id="imgConfirmBtn" onclick="confirmImage()" style="display: block;">✔ Usar esta imagen</button>
+  </div>
+</div>
+
+<script>
+var _currentWrapper = null;
+var _pendingSrc = null;
+var _pendingIsUrl = false;
+var _currentTab = 'file';
+
+/* ── Abrir modal ── */
+function openImgModal(wrapper) {
+  _currentWrapper = wrapper;
+  _pendingSrc = null;
+  _pendingIsUrl = false;
+  document.getElementById('imgModalOverlay').classList.add('active');
+  document.getElementById('imgFileInput').value = '';
+  document.getElementById('imgPreview').style.display = 'none';
+  document.getElementById('imgConfirmBtn').style.display = 'none';
+  document.getElementById('urlError').style.display = 'none';
+
+  // Si ya hay una imagen con URL, pre-rellenar el campo
+  var existingImg = wrapper.querySelector('.dish-image[data-url]');
+  if (existingImg) {
+    switchImgTab('url');
+    document.getElementById('imgUrlInput').value = existingImg.getAttribute('data-url');
+  } else {
+    switchImgTab('file');
+    document.getElementById('imgUrlInput').value = '';
+  }
+}
+
+function closeImgModal() {
+  document.getElementById('imgModalOverlay').classList.remove('active');
+  _currentWrapper = null;
+  _pendingSrc = null;
+}
+
+document.getElementById('imgModalOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeImgModal();
+});
+
+/* ── Tabs ── */
+function switchImgTab(tab) {
+  _currentTab = tab;
+  document.getElementById('tabFile').classList.toggle('active', tab === 'file');
+  document.getElementById('tabUrl').classList.toggle('active', tab === 'url');
+  document.getElementById('panelFile').classList.toggle('active', tab === 'file');
+  document.getElementById('panelUrl').classList.toggle('active', tab === 'url');
+  document.getElementById('imgPreview').style.display = 'none';
+  document.getElementById('imgConfirmBtn').style.display = 'none';
+  document.getElementById('urlError').style.display = 'none';
+  _pendingSrc = null;
+}
+
+/* ── Archivo local ── */
+function handleFileSelect(e) {
+  var file = e.target.files[0];
+  if (!file) return;
+  var r = new FileReader();
+  r.onload = function(ev) {
+    _pendingSrc = ev.target.result;
+    _pendingIsUrl = false;
+    showPreview(_pendingSrc);
+  };
+  r.readAsDataURL(file);
+}
+
+/* ── URL de internet ── */
+function previewUrl() {
+  var url = document.getElementById('imgUrlInput').value.trim();
+  if (!url) return;
+  document.getElementById('urlError').style.display = 'none';
+  var testImg = new Image();
+  testImg.crossOrigin = 'anonymous';
+  testImg.onload = function() {
+    _pendingSrc = url;
+    _pendingIsUrl = true;
+    showPreview(url);
+  };
+  testImg.onerror = function() {
+    // Intento sin crossOrigin (algunas URLs lo rechazan pero sí cargan)
+    var testImg2 = new Image();
+    testImg2.onload = function() {
+      _pendingSrc = url;
+      _pendingIsUrl = true;
+      showPreview(url);
+    };
+    testImg2.onerror = function() {
+      document.getElementById('urlError').style.display = 'block';
+      document.getElementById('imgPreview').style.display = 'none';
+      document.getElementById('imgConfirmBtn').style.display = 'none';
+      _pendingSrc = null;
+    };
+    testImg2.src = url + (url.includes('?') ? '&' : '?') + '_t=' + Date.now();
+  };
+  testImg.src = url;
+}
+
+// Preview en tiempo real al escribir (con debounce)
+var _urlDebounce;
+document.getElementById('imgUrlInput').addEventListener('input', function() {
+  clearTimeout(_urlDebounce);
+  _urlDebounce = setTimeout(previewUrl, 600);
+});
+
+function showPreview(src) {
+  document.getElementById('imgPreviewImg').src = src;
+  document.getElementById('imgPreview').style.display = 'block';
+  document.getElementById('imgConfirmBtn').style.display = 'block';
+}
+
+/* ── Confirmar imagen → la aplica en el DOM con data-url si es URL ── */
+function confirmImage() {
+  if (!_pendingSrc || !_currentWrapper) return;
+  var ph = _currentWrapper.querySelector('.dish-image-placeholder');
+  var existing = _currentWrapper.querySelector('.dish-image');
+  if (existing) existing.remove();
+
+  var img = document.createElement('img');
+  img.src = _pendingSrc;
+  img.className = 'dish-image';
+  img.title = 'Clic para cambiar imagen';
+
+  // Si es URL, guardarla en data-url para poder recuperarla y exportarla
+  if (_pendingIsUrl) {
+    img.setAttribute('data-url', _pendingSrc);
+  }
+
+  img.onclick = function() { openImgModal(_currentWrapper); };
+  _currentWrapper.insertBefore(img, ph);
+  ph.style.display = 'none';
+  closeImgModal();
+}
+
+/* ── GUARDAR HTML con URLs incrustadas en el src ── */
+function saveHtmlWithImages() {
+  // Clonar el documento completo
+  var clone = document.documentElement.cloneNode(true);
+
+  // En el clon, para cada imagen con data-url, asegurarse que src = data-url
+  clone.querySelectorAll('img.dish-image[data-url]').forEach(function(img) {
+    img.setAttribute('src', img.getAttribute('data-url'));
+    img.removeAttribute('data-url');
+    img.removeAttribute('onclick');
+    img.removeAttribute('title');
+  });
+
+  // Quitar el modal del clon para no duplicarlo en el guardado
+  var modalEl = clone.querySelector('#imgModalOverlay');
+  if (modalEl) modalEl.remove();
+
+  var html = '<!DOCTYPE html>\n' + clone.outerHTML;
+  var blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'MATU_Menu_Completo_2026.html';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+</script>
+
+
+</body></html>
